@@ -6,8 +6,6 @@ tello.connect()
 
 tello.takeoff
 
-for i in range(8):
-    tello.move_left(70)
-    tello.rotate_clockwise(45)
+tello.curve_xyz_speed(25, -25, 0, 25, -75, 0, 20)
 
 tello.land

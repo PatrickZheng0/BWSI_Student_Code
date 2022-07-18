@@ -2,4 +2,4 @@
 source_root_dir = '/home/patrick/BWSI_Student_Code/catkin_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/patrick/BWSI_Student_Code/catkin_ws/devel;/opt/ros/noetic'.split(';') if '/home/patrick/BWSI_Student_Code/catkin_ws/devel;/opt/ros/noetic' != '' else []

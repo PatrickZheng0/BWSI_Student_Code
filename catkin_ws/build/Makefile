@@ -284,6 +284,240 @@ gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+#=============================================================================
+# Target rules for targets named ros_wrapper_genpy
+
+# Build rule for target.
+ros_wrapper_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_genpy
+.PHONY : ros_wrapper_genpy
+
+# fast build rule for target.
+ros_wrapper_genpy/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_genpy.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_genpy.dir/build
+.PHONY : ros_wrapper_genpy/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages_py
+
+# Build rule for target.
+ros_wrapper_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages_py
+.PHONY : ros_wrapper_generate_messages_py
+
+# fast build rule for target.
+ros_wrapper_generate_messages_py/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_py.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_py.dir/build
+.PHONY : ros_wrapper_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_gennodejs
+
+# Build rule for target.
+ros_wrapper_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_gennodejs
+.PHONY : ros_wrapper_gennodejs
+
+# fast build rule for target.
+ros_wrapper_gennodejs/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_gennodejs.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_gennodejs.dir/build
+.PHONY : ros_wrapper_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages_nodejs
+
+# Build rule for target.
+ros_wrapper_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages_nodejs
+.PHONY : ros_wrapper_generate_messages_nodejs
+
+# fast build rule for target.
+ros_wrapper_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_nodejs.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_nodejs.dir/build
+.PHONY : ros_wrapper_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_eus
+
+# Build rule for target.
+std_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make ros_wrapper/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make ros_wrapper/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_nodejs
+
+# Build rule for target.
+std_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make ros_wrapper/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_py
+
+# Build rule for target.
+std_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/std_msgs_generate_messages_py.dir/build.make ros_wrapper/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages_cpp
+
+# Build rule for target.
+ros_wrapper_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages_cpp
+.PHONY : ros_wrapper_generate_messages_cpp
+
+# fast build rule for target.
+ros_wrapper_generate_messages_cpp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_cpp.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_cpp.dir/build
+.PHONY : ros_wrapper_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages
+
+# Build rule for target.
+ros_wrapper_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages
+.PHONY : ros_wrapper_generate_messages
+
+# fast build rule for target.
+ros_wrapper_generate_messages/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages.dir/build
+.PHONY : ros_wrapper_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _ros_wrapper_generate_messages_check_deps_State
+
+# Build rule for target.
+_ros_wrapper_generate_messages_check_deps_State: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ros_wrapper_generate_messages_check_deps_State
+.PHONY : _ros_wrapper_generate_messages_check_deps_State
+
+# fast build rule for target.
+_ros_wrapper_generate_messages_check_deps_State/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/_ros_wrapper_generate_messages_check_deps_State.dir/build.make ros_wrapper/CMakeFiles/_ros_wrapper_generate_messages_check_deps_State.dir/build
+.PHONY : _ros_wrapper_generate_messages_check_deps_State/fast
+
+#=============================================================================
+# Target rules for targets named _ros_wrapper_generate_messages_check_deps_Flip
+
+# Build rule for target.
+_ros_wrapper_generate_messages_check_deps_Flip: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ros_wrapper_generate_messages_check_deps_Flip
+.PHONY : _ros_wrapper_generate_messages_check_deps_Flip
+
+# fast build rule for target.
+_ros_wrapper_generate_messages_check_deps_Flip/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/_ros_wrapper_generate_messages_check_deps_Flip.dir/build.make ros_wrapper/CMakeFiles/_ros_wrapper_generate_messages_check_deps_Flip.dir/build
+.PHONY : _ros_wrapper_generate_messages_check_deps_Flip/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_genlisp
+
+# Build rule for target.
+ros_wrapper_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_genlisp
+.PHONY : ros_wrapper_genlisp
+
+# fast build rule for target.
+ros_wrapper_genlisp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_genlisp.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_genlisp.dir/build
+.PHONY : ros_wrapper_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages_lisp
+
+# Build rule for target.
+ros_wrapper_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages_lisp
+.PHONY : ros_wrapper_generate_messages_lisp
+
+# fast build rule for target.
+ros_wrapper_generate_messages_lisp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_lisp.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_lisp.dir/build
+.PHONY : ros_wrapper_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_gencpp
+
+# Build rule for target.
+ros_wrapper_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_gencpp
+.PHONY : ros_wrapper_gencpp
+
+# fast build rule for target.
+ros_wrapper_gencpp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_gencpp.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_gencpp.dir/build
+.PHONY : ros_wrapper_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_generate_messages_eus
+
+# Build rule for target.
+ros_wrapper_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_generate_messages_eus
+.PHONY : ros_wrapper_generate_messages_eus
+
+# fast build rule for target.
+ros_wrapper_generate_messages_eus/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_eus.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_generate_messages_eus.dir/build
+.PHONY : ros_wrapper_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_cpp
+
+# Build rule for target.
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make ros_wrapper/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named ros_wrapper_geneus
+
+# Build rule for target.
+ros_wrapper_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_wrapper_geneus
+.PHONY : ros_wrapper_geneus
+
+# fast build rule for target.
+ros_wrapper_geneus/fast:
+	$(MAKE) -f ros_wrapper/CMakeFiles/ros_wrapper_geneus.dir/build.make ros_wrapper/CMakeFiles/ros_wrapper_geneus.dir/build
+.PHONY : ros_wrapper_geneus/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,6 +540,24 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... ros_wrapper_genpy"
+	@echo "... ros_wrapper_generate_messages_py"
+	@echo "... ros_wrapper_gennodejs"
+	@echo "... ros_wrapper_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... ros_wrapper_generate_messages_cpp"
+	@echo "... ros_wrapper_generate_messages"
+	@echo "... _ros_wrapper_generate_messages_check_deps_State"
+	@echo "... _ros_wrapper_generate_messages_check_deps_Flip"
+	@echo "... ros_wrapper_genlisp"
+	@echo "... ros_wrapper_generate_messages_lisp"
+	@echo "... ros_wrapper_gencpp"
+	@echo "... ros_wrapper_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... ros_wrapper_geneus"
 .PHONY : help
 
 
