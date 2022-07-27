@@ -16,6 +16,9 @@ class Driver():
 
         self.tello = Tello()
         self.tello.connect()
+        self.tello.stream_on()
+        self.state = State()
+
 
         self.camera_pub = rospy.Publisher('/tello/cam_forward', Image, queue_size=10)
         self.state_pub = rospy.Publisher('/tello/state', State, queue_size=10)
@@ -25,9 +28,8 @@ class Driver():
         self.takeoff_sub = rospy.Subscriber('/tello/takeoff', Empty, self.takeoff_callback)
         self.land_sub = rospy.Subscriber('/tello/land', Empty, self.land_callback)
 
-        self.state = State()
 
-        #camera_pub.publish(tello.get_frame_read)
+        self.camera_pub.publish(self.tello.get_frame_read)
         self.state.battery = self.tello.get_battery()
         self.state.height = self.tello.get_height()
         self.state.temperature = self.tello.get_temperature()
