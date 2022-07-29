@@ -4,7 +4,6 @@
 More information about PID Controller: http://en.wikipedia.org/wiki/PID_controller
 """
 import time
-from tkinter import S
 
 class PID:
     """PID Controller

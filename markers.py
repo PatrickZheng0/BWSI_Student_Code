@@ -69,8 +69,13 @@ class Marker:
             angle = -math.atan(y/x) - math.pi
 
         angle *= 180/math.pi # convert radians to degrees
+        angle = 45 - angle # degrees in ccw
 
-        self.marker_roll = 45 - angle
+        if angle < 180:
+            self.marker_roll = -angle
+        else:
+            self.marker_roll = 360 - angle
+
         return self.marker_roll
 
 
