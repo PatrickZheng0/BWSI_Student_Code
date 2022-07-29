@@ -24,11 +24,15 @@ focal_length = 912 # 820mm dist, 167 pxl img, 150mm tag size = 912 focal length 
 
 turn_pid = PID(0.25, 0, 0.001)
 turn_pid.set_sample_time(0.1)
-turn_pid.SetPoint = 416 # frame size ~ 832x832 pxls
+turn_pid.SetPoint = 450 # frame size ~ 900x700 pxls
 
-shift_pid = PID(0.05, 0, 0)
-shift_pid.set_sample_time(0.1)
-shift_pid.SetPoint = 416 # frame size ~ 832x832 pxls
+shiftx_pid = PID(0.05, 0, 0)
+shiftx_pid.set_sample_time(0.1)
+shiftx_pid.SetPoint = 450 # frame size ~ 900x700 pxls
+
+shifty_pid = PID(0.05, 0, 0)
+shifty_pid.set_sample_time(0.1)
+shifty_pid.SetPoint = 350 # frame size ~ 900x700 pxls
 
 img = frame_read.frame
 corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
@@ -64,47 +68,7 @@ while True:
 
     marker = Marker(id, corners)
 
-    # if check_turn == False:
-    #     for i in range(25):
-    #         img = frame_read.frame
-    #         corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
-
-    #         feedback = marker.get_center()[0]
-    #         turn_pid.update(feedback)
-    #         turn_output = int(turn_pid.output)
-    #         tello.send_rc_control(0, 0, 0, -turn_output)
-    #         sleep(0.05)
-    #         tello.send_rc_control(0, 0, 0, 0)
-        
-    #     check_turn = True
-
-    # side_len = marker.get_avg_side_length()
-    # if (marker.get_dist_to_marker(size, focal_length) > move_pid.get_set_point() + 25) or (marker.get_dist_to_marker(size, focal_length) < move_pid.get_set_point - 25):
-    #     img = frame_read.frame
-    #     corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
-    #     marker = Marker(id, corners)
-
-    #     side_len = marker.get_avg_side_length()
-    #     dist = marker.get_dist_to_marker(size, focal_length)
-    #     if dist < move_pid.get_set_point():
-    #         tello.send_rc_control(0, -20, 0, 0)
-    #     else: tello.send_rc_control(0, 20, 0, 0)
-
-    #     while (marker.get_dist_to_marker(size, focal_length) > move_pid.get_set_point() + 25) or (marker.get_dist_to_marker(size, focal_length) < move_pid.get_set_point - 25):
-    #         img = frame_read.frame
-    #         corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
-    #         marker = Marker(id, corners)
-    #         side_len = marker.get_avg_side_length()
-    #         print('dist: ', marker.get_dist_to_marker(size, focal_length))
-
-    #     tello.send_rc_control(0, 0, 0, 0)
-
     tello.send_rc_control(0, 0, 0, 0)
-
-    #for i in range(50):
-    # img = frame_read.frame
-    # corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
-    # marker = Marker(id, corners)
 
     side_len = marker.get_avg_side_length()
     move_feedback = marker.get_dist_to_marker(size, focal_length)
@@ -112,30 +76,24 @@ while True:
     move_output = int(move_pid.output)
 
     shiftx_feedback = marker.get_center()[0]
-    shift_pid.update(shiftx_feedback)
-    shiftx_output = int(shift_pid.output)
+    shiftx_pid.update(shiftx_feedback)
+    shiftx_output = int(shiftx_pid.output)
 
     shifty_feedback = marker.get_center()[1]
-    shift_pid.update(shifty_feedback)
-    shifty_output = int(shift_pid.output)
+    shifty_pid.update(shifty_feedback)
+    shifty_output = int(shifty_pid.output)
 
     tello.send_rc_control(-shiftx_output, -move_output, -shifty_output, 0)
     sleep(0.075)
     tello.send_rc_control(0, 0, 0, 0)
     print(marker.get_dist_to_marker(size, focal_length))
-    print('shiftx: ', 416 - marker.get_center()[0])
-    print('shifty: ', 416 - marker.get_center()[1])
+    print('shiftx: ', 450 - marker.get_center()[0])
+    print('shifty: ', 350 - marker.get_center()[1])
 
     if (marker.get_dist_to_marker(size, focal_length) < 300):
         tello.send_rc_control(0, 0, 0, 0)
         tello.land()
         break
-
-#     #TODO move this statement
-#     #TODO fix get dist method
-#     tello.send_rc_control(0, 0, 0, 0)
-#     print('done')
-#     break
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):

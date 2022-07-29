@@ -42,8 +42,8 @@ while True:
     orientation = marker.get_orientation()
 
     #print('side len: ', side_len)
-    #print('center: ', center)
-    print('distance: ', dist)
+    print('center: ', center)
+    #print('distance: ', dist)
     #print('orientation: ', orientation)
     sleep(0.33)
 
