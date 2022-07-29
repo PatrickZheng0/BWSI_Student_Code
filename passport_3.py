@@ -26,23 +26,23 @@ turn_pid = PID(0.25, 0, 0.001)
 turn_pid.set_sample_time(0.1)
 turn_pid.SetPoint = 450 # frame size ~ 900x700 pxls
 
-shiftx_pid = PID(0.05, 0, 0)
+shiftx_pid = PID(0.1, 0, 0)
 shiftx_pid.set_sample_time(0.1)
 shiftx_pid.SetPoint = 450 # frame size ~ 900x700 pxls
 
-shifty_pid = PID(0.05, 0, 0)
+shifty_pid = PID(0.1, 0, 0)
 shifty_pid.set_sample_time(0.1)
 shifty_pid.SetPoint = 350 # frame size ~ 900x700 pxls
 
 img = frame_read.frame
 corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
 
-move_pid = PID(0.1, 0.025, 0.02)
+move_pid = PID(0.1, 0, 0.02)
 move_pid.set_sample_time(0.1)
 move_pid.SetPoint = 700 # drone stays 400mm from wall
 
 check_turn = False
-move_up = False
+count = 1
 
 prev_time = time.time()
 
@@ -58,17 +58,16 @@ while True:
 
             current_time = time.time()
 
-            if (current_time - prev_time > 12) and (move_up == False):
+            if (current_time - prev_time > 17*count):
                 tello.send_rc_control(0, 0, 20, 0)
                 sleep(1)
                 tello.send_rc_control(0, 0, 0, 0)
-                move_up = True
+                count += 1
+                break
         
         tello.send_rc_control(0, 0, 0, 0)
 
     marker = Marker(id, corners)
-
-    tello.send_rc_control(0, 0, 0, 0)
 
     side_len = marker.get_avg_side_length()
     move_feedback = marker.get_dist_to_marker(size, focal_length)
@@ -83,8 +82,8 @@ while True:
     shifty_pid.update(shifty_feedback)
     shifty_output = int(shifty_pid.output)
 
-    tello.send_rc_control(-shiftx_output, -move_output, -shifty_output, 0)
-    sleep(0.075)
+    tello.send_rc_control(-shiftx_output, -move_output, shifty_output, 0)
+    sleep(0.05)
     tello.send_rc_control(0, 0, 0, 0)
     print(marker.get_dist_to_marker(size, focal_length))
     print('shiftx: ', 450 - marker.get_center()[0])
