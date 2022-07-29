@@ -37,7 +37,6 @@ move_pid = PID(0.1, 0.025, 0.02)
 move_pid.set_sample_time(0.1)
 move_pid.SetPoint = 700 # drone stays 400mm from wall
 
-check_corner = False
 check_turn = False
 move_up = False
 
@@ -47,7 +46,7 @@ while True:
     img = frame_read.frame
     corners, ids, rejects = cv2.aruco.detectMarkers(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), arucoDict)
 
-    if check_corner == False:
+    if len(corners) == 0:
         tello.send_rc_control(0, 0, 0, 45)
         while len(corners) == 0:
             img = frame_read.frame
@@ -62,7 +61,6 @@ while True:
                 move_up = True
         
         tello.send_rc_control(0, 0, 0, 0)
-        check_corner = True
 
     marker = Marker(id, corners)
 
@@ -128,7 +126,7 @@ while True:
     print('shiftx: ', 416 - marker.get_center()[0])
     print('shifty: ', 416 - marker.get_center()[1])
 
-    if len(corners) == 0 or (marker.get_dist_to_marker(size, focal_length) < 300):
+    if (marker.get_dist_to_marker(size, focal_length) < 300):
         tello.send_rc_control(0, 0, 0, 0)
         tello.land()
         break
